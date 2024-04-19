@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Play Game - mas0ng.com</title>
+<style>
+ body, h1, a {
+    font-weight: bold; /* Makes all text bold */
+  }
+
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #fff; /* Slightly grey background for better contrast */
+  }
+  
+  .branding h1 {
+    font-size: 3em;
+    margin: 0px 0;
+    padding-top: 40px;
+  }
+  
+  .branding h1 span {
+    background: -webkit-linear-gradient(left, #654ea3, #eaafc8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Align menu to the center */
+  }
+  
+  .navbar ul li {
+    padding: 5px 10px;
+  }
+  
+  .navbar ul li a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .home-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    border: 2px solid #654ea3;
+    border-radius: 5px;
+    background: transparent;
+    color: #654ea3;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .home-btn:hover {
+    background: #654ea3;
+    color: #fff;
+  }
+  .home-btn:after {
+    content: '→';
+    display: inline-block;
+    margin-left: 10px;
+    transition: margin-left 0.3s ease;
+  }
+  
+  iframe {
+    width: 80%; /* Adjust the width as per your requirement */
+    height: 600px; /* Adjust the height as per your requirement */
+    border: none; /* Removes the default iframe border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds shadow for better appearance */
+    margin-bottom: 20px; /* Space below the iframe */
+  }
+
+</style>
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="catalog.html">Games</a></li>
+            <li><a href="coming soon.html">Coming Soon</a></li>
+            <li><a href="coming soon.html">Coming Soon</a></li>
+            <li><a href="coming soon.html">Coming Soon</a></li>
+            <li><a href="coming soon.html">Coming Soon</a></li>
+        </ul>
+    </div>
+    <div class="branding">
+      <h1>Game <span>BasketBros</span></h1>
+      <a href="coming soon.html" class="home-btn">Full Screen</a>
+    </div>
+
+
+<iframe src="https://basketbros.io/" title="BasketBros">
+  <!-- Fallback content if iframes are not supported -->
+  Your browser does not support iframes.
+</iframe>
+
+</body>
+</html>

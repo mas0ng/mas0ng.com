@@ -1,1 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+    // This script will run when the page loads
+    window.onload = function() {
+      // Check if the screen width is less than or equal to 600 pixels
+      if (window.innerWidth <= 600) {
+        // Redirect to the specified website
+        window.location.href = 'mobile.html';
+      }
+    };
+  </script>
+    <link rel="icon" type="image/jpg" href="images/favicon.png">
+<title>mas0ng.com | Games</title>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold; /* Makes all text bold */
+    margin: 0;
+    padding: 0;
+    background: #fff;
+  }
+
+  .header {
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .header h1 {
+    font-size: 2.5em;
+    margin: 20;
+  }
+
+  .header h1 span {
+    background: -webkit-linear-gradient(left, #654ea3, #eaafc8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .game-catalog {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Changed to space-around for even spacing */
+    padding: 20px;
+  }
+
+  .game-item {
+    width: calc(20% - 16px); /* Adjusts width to fit 5 in a row, accounting for 20px gap */
+    text-align: center;
+    background: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin: 10px; /* This creates the gap */
+    box-sizing: border-box; /* Includes padding and border in the width */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .game-item img {
+    width: 100%; /* Makes the image fully responsive within the container */
+    aspect-ratio: 1 / 1; /* Keeps a 1:1 aspect ratio */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    border-radius: 5px;
+  }
+
+  .play-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #654ea3;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .play-btn:hover {
+    background-color: #553d67;
+  }
+  .navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Align menu to the center */
+  }
+  
+  .navbar ul li {
+    padding: 5px 10px;
+  }
+  
+  .navbar ul li a {
+    text-decoration: none;
+    color: #333;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+    <div class="navbar">
+        <ul>
+            <li><a href="coming soon.html">Coming Soon</a></li>
+            <li><a href="coming soon.html">Coming Soon</a></li>
+            <li><a href="coming soon.html">Coming Soon</a></li>
+            <li><a href="coming soon.html">Coming Soon</a></li>
+            <li><a href="coming soon.html">Coming Soon</a></li>
+        </ul>
+    </div>
+  <h1>mas0ng.com <span>games</span></h1>
+</div>
+
+<div class="game-catalog">
+  <!-- Repeat this block for each game in your catalog -->
+  <div class="game-item">
+    <h2>Game Title</h2>
+    <img src="path-to-game-image.jpg" alt="Game Image Description">
+    <a href="path-to-game" class="play-btn">Play Now</a>
+  </div>
+  <div class="game-item">
+    <h2>Game Title</h2>
+    <img src="path-to-game-image.jpg" alt="Game Image Description">
+    <a href="path-to-game" class="play-btn">Play Now</a>
+  </div>
+  <div class="game-item">
+    <h2>Game Title</h2>
+    <img src="path-to-game-image.jpg" alt="Game Image Description">
+    <a href="path-to-game" class="play-btn">Play Now</a>
+  </div>
+  <div class="game-item">
+    <h2>Game Title</h2>
+    <img src="path-to-game-image.jpg" alt="Game Image Description">
+    <a href="path-to-game" class="play-btn">Play Now</a>
+  </div>
+</div>
+<div class="game-catalog">
+    <!-- Repeat this block for each game in your catalog -->
+    <div class="game-item">
+      <h2>Game Title</h2>
+      <img src="path-to-game-image.jpg" alt="Game Image Description">
+      <a href="path-to-game" class="play-btn">Play Now</a>
+    </div>
+    <div class="game-item">
+      <h2>Game Title</h2>
+      <img src="path-to-game-image.jpg" alt="Game Image Description">
+      <a href="path-to-game" class="play-btn">Play Now</a>
+    </div>
+    <div class="game-item">
+      <h2>Game Title</h2>
+      <img src="path-to-game-image.jpg" alt="Game Image Description">
+      <a href="path-to-game" class="play-btn">Play Now</a>
+    </div>
+    <div class="game-item">
+      <h2>Game Title</h2>
+      <img src="path-to-game-image.jpg" alt="Game Image Description">
+      <a href="path-to-game" class="play-btn">Play Now</a>
+    </div>
+  </div>
+
+</body>
+</html>
 

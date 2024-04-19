@@ -3,51 +3,114 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unsupported Screen Size - mas0ng.com</title>
- <link rel="shortcut icon" type="image/jpg" href="mas0ng.com/images/fravicon.jpg"/>
+<link rel="icon" type="image/jpg" href="https://mas0ng.com/images/favicon.png">
+<title>mas0ng.com | Coming Soon</title>
 <style>
-  body, h1 {
+  body, h1, a {
     font-weight: bold; /* Makes all text bold */
-    margin: 0;
-    padding: 0;
   }
 
   body {
     font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: #f5f5f5; /* Slightly grey background for better contrast */
+    background: #fff;
   }
   
-  .unsupported-message {
-    text-align: center;
-    display: none; /* Hidden by default */
+  .navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
   }
   
-  .unsupported-message h1 {
-    font-size: 2em;
-    color: #333; /* Default text color */
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
   }
   
-  .unsupported-message h1 span {
+  .navbar ul li {
+    padding: 5px 10px;
+  }
+  
+  .navbar ul li a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .branding h1 {
+    font-size: 3em;
+    margin: 0;
+    background: #fff;
+  }
+  
+  .branding h1 span {
     background: -webkit-linear-gradient(left, #654ea3, #eaafc8);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   
-  /* This media query will apply styles for screens with a width of 600px or less */
-  @media (max-width: 600px) {
-    .unsupported-message {
-      display: block; /* Show the message */
+  .explore-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: 2px solid #654ea3;
+    border-radius: 5px;
+    background: transparent;
+    color: #654ea3;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .explore-btn:hover {
+    background: #654ea3;
+    color: #fff;
+  }
+  
+  .explore-btn:after {
+    content: '→';
+    display: inline-block;
+    margin-left: 10px;
+    transition: margin-left 0.3s ease;
+  }
+  
+  .explore-btn:hover:after {
+    margin-left: 15px;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .branding h1 {
+      font-size: 2em; /* Smaller font size on smaller screens */
+    }
+    .explore-btn {
+      padding: 8px 16px; /* Smaller button on smaller screens */
+    }
+    .navbar ul {
+      flex-direction: column; /* Stack navigation items vertically on smaller screens */
+      align-items: center;
+    }
+    .navbar ul li {
+      margin-bottom: 10px; /* Add space between vertical nav items */
     }
   }
 </style>
 </head>
 <body>
-<div class="unsupported-message">
-  <h1><span>This Screen Size Is Unsupported</span></h1>
+
+<div class="branding">
+  <h1>This page is <span>Not Available On This Device</span></h1>
+  <a href="https://mobile.mas0ng.com" class="explore-btn">Explore Now</a>
 </div>
 </body>
 </html>

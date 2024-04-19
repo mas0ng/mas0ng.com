@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unsupported Screen Size - mas0ng.com</title>
+ <link rel="shortcut icon" type="image/jpg" href="mas0ng.com/images/fravicon.jpg"/>
+<style>
+  body, h1 {
+    font-weight: bold; /* Makes all text bold */
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f5f5f5; /* Slightly grey background for better contrast */
+  }
+  
+  .unsupported-message {
+    text-align: center;
+    display: none; /* Hidden by default */
+  }
+  
+  .unsupported-message h1 {
+    font-size: 2em;
+    color: #333; /* Default text color */
+  }
+  
+  .unsupported-message h1 span {
+    background: -webkit-linear-gradient(left, #654ea3, #eaafc8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* This media query will apply styles for screens with a width of 600px or less */
+  @media (max-width: 600px) {
+    .unsupported-message {
+      display: block; /* Show the message */
+    }
+  }
+</style>
+</head>
+<body>
+<div class="unsupported-message">
+  <h1><span>This Screen Size Is Unsupported</span></h1>
+</div>
+</body>
+</html>

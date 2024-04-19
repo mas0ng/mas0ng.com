@@ -3,8 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+  // This script will run when the page loads
+  window.onload = function() {
+    // Check if the screen width is less than or equal to 600 pixels
+    if (window.innerWidth <= 600) {
+      // Redirect to the specified website
+      window.location.href = 'mobile.html';
+    }
+  };
+</script>
+  <link rel="icon" type="image/jpg" href="images/favicon.png">
 <title>mas0ng.com | Coming Soon</title>
-  <link rel="shortcut icon" type="image/jpg" href="mas0ng.com/images/fravicon.jpg"/>
 <style>
   body, h1, a {
     font-weight: bold; /* Makes all text bold */

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Coming Soon - mas0ng.com</title>
+<title>mas0ng.com | Coming Soon</title>
 <style>
   body, h1, a {
     font-weight: bold; /* Makes all text bold */
@@ -18,19 +18,9 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: #fff; /* Slightly grey background for better contrast */
+    background: #fff;
   }
   
-  .branding h1 {
-    font-size: 3em;
-    margin: 20px 0;
-  }
-  
-  .branding h1 span {
-    background: -webkit-linear-gradient(left, #654ea3, #eaafc8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
   .navbar {
     position: absolute;
     top: 0;
@@ -57,7 +47,19 @@
     color: #333;
   }
   
-  .home-btn {
+  .branding h1 {
+    font-size: 3em;
+    margin: 0;
+    background: #fff; /* Default background */
+  }
+  
+  .branding h1 span {
+    background: -webkit-linear-gradient(left, #654ea3, #eaafc8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .explore-btn {
     display: inline-block;
     padding: 10px 20px;
     margin-top: 20px;
@@ -69,31 +71,36 @@
     transition: all 0.3s ease;
   }
   
-  .home-btn:hover {
+  .explore-btn:hover {
     background: #654ea3;
     color: #fff;
   }
-  .home-btn:after {
+  
+  .explore-btn:after {
     content: '→';
     display: inline-block;
     margin-left: 10px;
     transition: margin-left 0.3s ease;
   }
+  
+  .explore-btn:hover:after {
+    margin-left: 15px;
+  }
 </style>
 </head>
 <body>
 <div class="navbar">
-    <ul>
-        <li><a href="coming soon.html">Coming Soon</a></li>
-        <li><a href="coming soon.html">Coming Soon</a></li>
-        <li><a href="coming soon.html">Coming Soon</a></li>
-        <li><a href="coming soon.html">Coming Soon</a></li>
-        <li><a href="coming soon.html">Coming Soon</a></li>
-    </ul>
+  <ul>
+    <li><a href="coming soon.html">Coming Soon</a></li>
+    <li><a href="coming soon.html">Coming Soon</a></li>
+    <li><a href="coming soon.html">Coming Soon</a></li>
+    <li><a href="coming soon.html">Coming Soon</a></li>
+    <li><a href="coming soon.html">Coming Soon</a></li>
+  </ul>
 </div>
 <div class="branding">
-  <h1>This Page Is <span>Coming Soon</span></h1>
-  <a href="index.html" class="home-btn">Return to Home</a> <!-- Link to your homepage -->
+  <h1>This page is <span>Coming Soon</span></h1>
+  <a href="coming soon.html" class="explore-btn">Explore</a>
 </div>
 </body>
 </html>

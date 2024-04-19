@@ -6,37 +6,42 @@
 <title>mas0ng.com | Home</title>
 <link rel="icon" type="image/x-icon" href="mas0ng.com/images/favicon.png">
 <style>
+  /* Basic Resets */
   body, h1, a {
-    font-weight: bold; /* Makes all text bold */
-  }
-
-  body {
-    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    font-weight: bold;
+  }
+
+  /* Font and Background */
+  body {
+    font-family: 'Arial', sans-serif;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     height: 100vh;
     background: #fff;
   }
   
+  /* Navbar Styles */
   .navbar {
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 100%;
     display: flex;
     justify-content: center;
     padding: 10px 0;
+    background: rgba(255, 255, 255, 0.9);
+    z-index: 1000; /* Ensure navbar is above other content */
   }
   
   .navbar ul {
     list-style: none;
     display: flex;
-    gap: 20px;
-    padding: 0; /* Remove default padding */
-    margin: 0; /* Align menu to the center */
+    gap: 10px; /* Reduced gap for mobile */
+    padding: 0;
+    margin: 0;
   }
   
   .navbar ul li {
@@ -47,11 +52,10 @@
     text-decoration: none;
     color: #333;
   }
-  
+
+  /* Branding and Button Styles */
   .branding h1 {
-    font-size: 3em;
-    margin: 0;
-    background: #fff; /* Default background */
+    font-size: 2em; /* Smaller font size for mobile */
   }
   
   .branding h1 span {
@@ -72,9 +76,10 @@
     transition: all 0.3s ease;
   }
   
-  .explore-btn:hover {
+  .explore-btn:hover, .explore-btn:focus {
     background: #654ea3;
     color: #fff;
+    outline: none; /* Remove focus outline */
   }
   
   .explore-btn:after {
@@ -84,8 +89,29 @@
     transition: margin-left 0.3s ease;
   }
   
-  .explore-btn:hover:after {
+  .explore-btn:hover:after, .explore-btn:focus:after {
     margin-left: 15px;
+  }
+
+  /* Media Queries for smaller devices */
+  @media (max-width: 768px) {
+    .navbar ul {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .navbar ul li {
+      padding: 10px;
+    }
+
+    .branding h1 {
+      text-align: center;
+    }
+
+    .explore-btn {
+      font-size: 0.8em;
+      padding: 8px 16px;
+    }
   }
 </style>
 </head>

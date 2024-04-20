@@ -3,7 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Gallery</title>
+    <script>
+  // This script will run when the page loads
+  window.onload = function() {
+    // Check if the screen width is less than or equal to 600 pixels
+    if (window.innerWidth <= 600) {
+      // Redirect to the specified website
+      window.location.href = 'https://mas0ng.com/mobile.html';
+    }
+  };
+</script>
+  <link rel="icon" type="image/jpg" href="https://mas0ng.com/images/favicon.png">
+    <title>mas0ng.com | Catalog</title>
     <style>
         .container {
             display: flex;

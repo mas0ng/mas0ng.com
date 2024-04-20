@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Gallery</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .game-link {
+            display: block;
+            text-align: center;
+            width: 31%; /* Approximately one third of the container, adjusting for margins */
+            margin: 1%;
+            text-decoration: none;
+            color: black; /* Color for the text */
+        }
+
+        .game-link img {
+            width: 100%;
+            aspect-ratio: 16 / 9; /* Keeps the aspect ratio at 16:9 */
+            display: block;
+        }
+
+        .game-link p {
+            margin-top: 8px;
+        }
+
+        .game-link:hover {
+            outline: 2px solid purple; /* Purple outline on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="https://mas0ng.com/all games/basketbros.html" class="game-link">
+            <img src="game images/basketbros-io.jpg" alt="BasketBros">
+            <p>BasketBros</p>
+        </a>
+        <a href="https://example.com/link2" class="game-link">
+            <img src="path_to_image2.jpg" alt="Game 2">
+            <p>Game Title 2</p>
+        </a>
+        <a href="https://example.com/link3" class="game-link">
+            <img src="path_to_image3.jpg" alt="Game 3">
+            <p>Game Title 3</p>
+        </a>
+        <a href="https://example.com/link4" class="game-link">
+            <img src="path_to_image4.jpg" alt="Game 4">
+            <p>Game Title 4</p>
+        </a>
+        <a href="https://example.com/link5" class="game-link">
+            <img src="path_to_image5.jpg" alt="Game 5">
+            <p>Game Title 5</p>
+        </a>
+        <a href="https://example.com/link6" class="game-link">
+            <img src="path_to_image6.jpg" alt="Game 6">
+            <p>Game Title 6</p>
+        </a>
+    </div>
+</body>
+</html>

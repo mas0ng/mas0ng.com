@@ -3,54 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>
-  // This script will run when the page loads
-  window.onload = function() {
-    // Check if the screen width is less than or equal to 600 pixels
-    if (window.innerWidth <= 600) {
-      // Redirect to the specified website
-      window.location.href = 'https://mas0ng.com/mobile.html';
-    }
-  };
-</script>
-  <link rel="icon" type="image/jpg" href="https://mas0ng.com/images/favicon.png">
-    <title>mas0ng.com | Catalog</title>
+    <title>Game Gallery</title>
     <style>
+        body {
+            background-color: #f0f0f0; /* Light grey background for the page */
+        }
+
         .container {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
+            margin: 20px;
         }
 
         .game-link {
-            display: block;
-            text-align: center;
-            width: 31%; /* Approximately one third of the container, adjusting for margins */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 31%;
             margin: 1%;
             text-decoration: none;
-            color: black; /* Color for the text */
+            color: black;
+            background-color: #f7f7f7; /* Slightly darker white background */
+            border-radius: 8px; /* Rounded corners for the container */
+            overflow: hidden; /* Ensures that the image does not break the border radius */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
         }
 
         .game-link img {
             width: 100%;
-            aspect-ratio: 16 / 9; /* Keeps the aspect ratio at 16:9 */
-            display: block;
+            height: auto;
+            aspect-ratio: 16 / 9;
+            object-fit: cover; /* Ensures the image covers the area, cropping instead of stretching */
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
         }
 
         .game-link p {
-            margin-top: 8px;
+            font-size: 16px; /* Set the font size for game titles */
+            color: #333;
+            padding: 8px;
+            margin: 0;
+            width: 100%; /* Ensures text alignment and padding does not overflow */
+            text-align: center; /* Centers the text */
         }
 
         .game-link:hover {
             outline: 2px solid purple; /* Purple outline on hover */
+            cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="https://mas0ng.com/all games/basketbros.html" class="game-link">
-            <img src="game images/basketbros-io.jpg" alt="BasketBros">
-            <p>BasketBros</p>
+        <a href="https://example.com/link1" class="game-link">
+            <img src="path_to_image1.jpg" alt="Game 1">
+            <p>Game Title 1</p>
         </a>
         <a href="https://example.com/link2" class="game-link">
             <img src="path_to_image2.jpg" alt="Game 2">

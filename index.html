@@ -4,11 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script>
-  // This script will run when the page loads
+  fetch('https://mas0ng.com/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbarContainer').innerHTML = data;
+            })
+            .catch(error => console.error('Error fetching navbar:', error));
+  
   window.onload = function() {
-    // Check if the screen width is less than or equal to 600 pixels
     if (window.innerWidth <= 600) {
-      // Redirect to the specified website
       window.location.href = 'mobile.html';
     }
   };
@@ -100,15 +104,9 @@
 </style>
 </head>
 <body>
-<div class="navbar">
-  <ul>
-    <li><a href="/all games/catalog.html">Games</a></li>
-    <li><a href="coming soon.html">Coming Soon</a></li>
-    <li><a href="coming soon.html">Coming Soon</a></li>
-    <li><a href="coming soon.html">Coming Soon</a></li>
-    <li><a href="coming soon.html">Coming Soon</a></li>
-  </ul>
-</div>
+  
+<div id="navbarContainer"></div>
+  
 <div class="branding">
   <h1>Welcome to <span>mas0ng.com</span></h1>
   <a href="https://mas0ng.com/explore/explore page.html" class="explore-btn">Explore</a>

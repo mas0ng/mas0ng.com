@@ -1,0 +1,135 @@
+body {
+	font-family: 'Poppins', sans-serif;
+	background: #121212;
+	margin: 0;
+	color: white;
+}
+
+.hero {
+	padding: 1rem;
+	justify-content: center;
+	background-color: #232323;
+	width: 90%;
+	max-width: 1200px;
+	margin: 2rem auto;
+	border-radius: 16px;
+}
+
+.hero h1 {
+	font-size: 3rem;
+	text-align: center;
+	font-family: 'Poppins', sans-serif;
+	
+
+}
+
+.hero p {
+	font-size: 1.2rem;
+	text-align: center;
+	font-family: 'Poppins', sans-serif;
+}
+
+.cards-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	padding: 1rem;
+	justify-content: center;
+	background-color: #232323;
+	width: 90%;
+	max-width: 1200px;
+	margin: 2rem auto;
+	border-radius: 16px;
+}
+
+
+/* Individual card styling */
+.card {
+	width: 300px;
+	background: #1D1D1D;
+	border-radius: 16px;
+	overflow: hidden;
+	cursor: pointer;
+	height: 300px;
+	font-family: 'Poppins', sans-serif;
+	outline: 3px solid transparent;
+	outline-offset: 0;
+
+}
+.card:hover {
+	outline-color: #bb86fc;
+}
+
+/* Image container to enforce a 2:1 aspect ratio */
+.card-img-container {
+	position: relative;
+	width: 90%;
+	padding-top: 50%; /* 50% of width gives a 2:1 aspect ratio (300x150) */
+	overflow: hidden;
+	margin: 5%;
+	border-radius: 12px;
+	margin-top; 0px;
+	margin-bottom: 5px;
+}
+.card-img-container img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/* Card body styling */
+.card-body {
+	padding-left: 1rem;
+	padding-right: 1rem;
+	padding-bottom: 0.25rem;
+	padding-top: 0.25rem;
+}
+.card-title {
+	font-size: 1rem;
+	font-weight: 600;
+	margin-bottom: 5px;
+	color: #bb86fc;
+	margin-top: 2px;
+}
+
+.card-description {
+	font-size: 0.85rem;
+	color: #666;
+	line-height: 1.4;
+	color: white;
+	margin-top: 5px;
+}
+
+h3 {
+	margin: 0px;
+	color: white;
+}
+
+.card-tag-blue {
+	display: inline-block;
+	background-color: rgba(0, 123, 255, 0.2); /* light transparent blue */
+	color: #339CFF;
+	font-size: 0.75rem;
+	font-weight: 500;
+	padding: 0.25rem 0.5rem;
+	border-radius: 8px;
+	margin-bottom: 0.25rem;
+	margin-top: 0px;
+	margin-bottom: 5px;
+}
+
+.card-tag-red {
+	display: inline-block;
+	background-color: rgba(255, 0, 0, 0.2); /* light transparent blue */
+	color: #ff0000;
+	font-size: 0.75rem;
+	font-weight: 500;
+	padding: 0.25rem 0.5rem;
+	border-radius: 8px;
+	margin-bottom: 0.25rem;
+	margin-top: 0px;
+	margin-bottom: 5px;
+}

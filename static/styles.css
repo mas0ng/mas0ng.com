@@ -133,3 +133,16 @@ h3 {
 	margin-top: 0px;
 	margin-bottom: 5px;
 }
+
+.card-tag-green {
+	display: inline-block;
+	background-color: rgba(0, 255, 0, 0.2); /* light transparent blue */
+	color: #00ff2f;
+	font-size: 0.75rem;
+	font-weight: 500;
+	padding: 0.25rem 0.5rem;
+	border-radius: 8px;
+	margin-bottom: 0.25rem;
+	margin-top: 0px;
+	margin-bottom: 5px;
+}

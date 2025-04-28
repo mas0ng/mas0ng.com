@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>AI Checker Home</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <h1>AI Checker</h1>
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="create.html">Create</a>
+        <a href="check.html">Check</a>
+      </div>
+    </div>
+    <div class="content index-content">
+      <!-- Tab buttons -->
+      <div class="tab-bar">
+        <button class="active" data-tab="create">Create</button>
+        <button data-tab="check">Check</button>
+        <button data-tab="help">How to Use</button>
+      </div>
+      <!-- Tab contents -->
+      <div id="create" class="tab-content">
+        <h2>Create an Assignment</h2>
+        <p>Wrap words in <code>//word//</code> to obfuscate them with lookalike Unicode before pasting into your AI prompt.</p>
+        <button class="btn nav-btn" onclick="location.href='create.html'">
+          Go to Create
+        </button>
+      </div>
+      <div id="check" class="tab-content hidden">
+        <h2>Check an Assignment</h2>
+        <p>Paste text or upload files to detect injected lookalike characters—and get a detailed likelihood score.</p>
+        <button class="btn nav-btn" onclick="location.href='check.html'">
+          Go to Check
+        </button>
+      </div>
+      <div id="help" class="tab-content hidden">
+        <h2>How to Use AI Checker</h2>
+        <p><strong>1. Create:</strong> Insert harmless lookalike characters into key words by wrapping them in <code>//</code> markers.</p>
+        <p><strong>2. Paste into AI:</strong> When you feed this to ChatGPT (or any AI), it will mirror those characters back.</p>
+        <p><strong>3. Check:</strong> Paste the AI’s reply here or upload the file—it’ll tell you if a peice of text is suspicious.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Tab functionality
+    document.querySelectorAll('.tab-bar button').forEach(btn => {
+      btn.onclick = () => {
+        document.querySelectorAll('.tab-bar button').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(tc => tc.classList.add('hidden'));
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.tab).classList.remove('hidden');
+      };
+    });
+  </script>
+</body>
+</html>

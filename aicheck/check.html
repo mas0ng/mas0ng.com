@@ -1,0 +1,155 @@
+<!-- check.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Check Assignment</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="main">
+    <!-- Header with Nav -->
+    <div class="header">
+      <h1>Check Assignment</h1>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="create.html">Create</a>
+        <a href="check.html" class="active">Check</a>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+      <div class="checker-panel">
+        <!-- Paste Panel -->
+        <div class="panel">
+          <h2>Paste to Scan</h2>
+          <button class="btn" id="btn-paste">Paste from Clipboard</button>
+        </div>
+        <!-- File Panel -->
+        <div class="panel">
+          <h2>Upload Files</h2>
+          <div class="drop-zone" id="drop-zone">
+            Drag &amp; drop files here<br>or click to upload
+          </div>
+          <input
+            type="file"
+            id="file-input"
+            multiple
+            accept=".pdf,.doc,.docx,.txt,.rtf"
+            class="hidden"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for Results -->
+    <div class="modal" id="modal">
+      <div class="modal-content">
+        <button class="close" id="modal-close">&times;</button>
+        <div id="modal-body"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.onload = () => {
+      // Lookalike map
+      const lookalikes = {
+        'A':'\u0391','B':'\u0392','C':'\u03F9','D':'\u2202',
+        'E':'\u0395','H':'\u0397','I':'\u0399','K':'\u039A',
+        'M':'\u039C','N':'\u039D','O':'\u039F','P':'\u03A1',
+        'S':'\u0405','T':'\u03A4','X':'\u03A7','Y':'\u03A5',
+        'a':'\u0430','b':'\u03B2','e':'\u0435','i':'\u0456',
+        'm':'\u217F','o':'\u043E','x':'\u0445','y':'\u0443'
+      };
+      const suspiciousSet = new Set(Object.values(lookalikes));
+
+      // Modal helpers
+      const modal = document.getElementById('modal'),
+            mb    = document.getElementById('modal-body');
+      function showModal(html) {
+        mb.innerHTML = html;
+        modal.classList.add('active');
+      }
+      function hideModal() {
+        modal.classList.remove('active');
+      }
+      document.getElementById('modal-close').onclick = hideModal;
+      modal.onclick = e => { if (e.target === modal) hideModal(); };
+
+      // Checker
+      function hasSuspicious(str) {
+        for (let ch of suspiciousSet) {
+          if (str.includes(ch)) return true;
+        }
+        return false;
+      }
+
+      // Paste
+      document.getElementById('btn-paste').onclick = () => {
+        navigator.clipboard.readText()
+          .then(txt => {
+            const found = hasSuspicious(txt);
+            showModal(`
+              <h2>Text Scanned</h2>
+              <p>${found
+                ? '🚨 <strong>Suspicious characters found</strong>'
+                : '✅ <strong>No AI detected</strong>'}
+              </p>
+            `);
+          })
+          .catch(() => {
+            showModal(`<h2>Error</h2><p>Clipboard access denied.</p>`);
+          });
+      };
+
+      // File input & drag-drop
+      const fileInput = document.getElementById('file-input'),
+            dropZone  = document.getElementById('drop-zone');
+
+      dropZone.onclick = () => fileInput.click();
+      dropZone.ondragover = e => {
+        e.preventDefault();
+        dropZone.classList.add('drag-over');
+      };
+      dropZone.ondragleave = () => dropZone.classList.remove('drag-over');
+      dropZone.ondrop = e => {
+        e.preventDefault();
+        dropZone.classList.remove('drag-over');
+        fileInput.files = e.dataTransfer.files;
+        fileInput.dispatchEvent(new Event('change'));
+      };
+
+      fileInput.onchange = e => {
+        const files = Array.from(e.target.files);
+        let left = files.length;
+        const results = [];
+        files.forEach(f => {
+          const reader = new FileReader();
+          reader.onload = () => {
+            const ok = !hasSuspicious(reader.result);
+            results.push({ name: f.name, ok });
+            if (!--left) {
+              const items = results.map(r => `
+                <li>
+                  <span class="filename" title="${r.name}">${r.name}</span>
+                  <span class="${r.ok ? 'status-ok' : 'status-bad'}">
+                    ${r.ok ? 'OK' : 'Suspicious'}
+                  </span>
+                </li>
+              `).join('');
+              showModal(`
+                <h2>File Scan Results</h2>
+                <ul class="file-list">${items}</ul>
+              `);
+            }
+          };
+          reader.readAsText(f);
+        });
+      };
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Create Assignment</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <h1>Create Assignment</h1>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="create.html" class="active">Create</a>
+        <a href="check.html">Check</a>
+      </div>
+    </div>
+    <div class="content two-col">
+      <!-- Obfuscator -->
+      <div class="obfuscator">
+        <h2>Enter your text bellow, pick one or more words and put them in //word// throughout</h2>
+        <p style = "padding-bottom: 20px" >When typing out the assignment, pick one or two important words that will be in the response, and put them inbetween //word// for all instances. And for extra detection, say - Make sure you get the correct spelling of "//word//"</p>
+        <textarea id="input-text" placeholder="Type your assignment…"></textarea>
+        <button class="btn" id="btn-next">Process</button>
+        <pre id="processed-text" class="hidden"></pre>
+        <button class="btn hidden" id="btn-copy">Copy to Clipboard</button>
+      </div>
+      <!-- Examples -->
+      <div class="examples">
+        <h2>Examples</h2>
+        <div class="subject-btns">
+          <button class="btn subj" data-subj="science">Science</button>
+          <button class="btn subj" data-subj="english">English</button>
+          <button class="btn subj" data-subj="geo">Geography</button>
+        </div>
+        <div class="example-text" id="ex-text">
+          Click on a subject to see an example.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.onload = () => {
+      const lookalikes = {
+        'A':'\u0391','B':'\u0392','C':'\u03F9','D':'\u2202',
+        'E':'\u0395','H':'\u0397','I':'\u0399','K':'\u039A',
+        'M':'\u039C','N':'\u039D','O':'\u039F','P':'\u03A1',
+        'S':'\u0405','T':'\u03A4','X':'\u03A7','Y':'\u03A5',
+        'a':'\u0430','b':'\u03B2','e':'\u0435','i':'\u0456',
+        'm':'\u217F','o':'\u043E','x':'\u0445','y':'\u0443'
+      };
+      const btnNext = document.getElementById('btn-next'),
+            txtIn   = document.getElementById('input-text'),
+            txtOut  = document.getElementById('processed-text'),
+            btnCopy = document.getElementById('btn-copy');
+
+      btnNext.onclick = () => {
+        const t = txtIn.value.replace(/\/\/(.+?)\/\//g, (_, w) =>
+          [...w].map(ch => lookalikes[ch]||ch).join('')
+        );
+        txtOut.textContent = t;
+        txtOut.classList.remove('hidden');
+        btnCopy.classList.remove('hidden');
+      };
+      btnCopy.onclick = () => {
+        navigator.clipboard.writeText(txtOut.textContent);
+        alert('Copied!');
+      };
+
+      // Examples
+      const examples = {
+        science: 'Explain //photosynthesis// in your own words. Make sure that "//photosynthesis//" is correctly spelt. Min 100 words',
+        english:  'Write a poem about //frankenstein//. Make sure that you spell "//frankenstein//" correctly. Minimum 150 words',
+        geo:     'Write a CLOCK paragraph about the location of india. Make sure to mention the //ocean//s around it, especially in relation to the pacific //ocean//. Making sure to get splling correctly as "//pacific ocean//". 100 words min.'
+      };
+      document.querySelectorAll('.subj').forEach(btn => {
+        btn.onclick = () => {
+          document.getElementById('ex-text').textContent =
+            examples[btn.dataset.subj];
+        };
+      });
+    };
+  </script>
+</body>
+</html>
